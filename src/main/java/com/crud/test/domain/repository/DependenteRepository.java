@@ -10,7 +10,6 @@ import com.crud.test.domain.model.Dependente;
 @Repository
 public interface DependenteRepository extends JpaRepository<Dependente, Long>{
 	
-	List<Dependente> findByNome(String nome);
 	List<Dependente> findByNomeContaining(String nome);
 
 }

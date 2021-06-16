@@ -10,7 +10,6 @@ import com.crud.test.domain.model.Pessoa;
 @Repository
 public interface PessoaRepository extends JpaRepository<Pessoa, Long>{
 	
-	List<Pessoa> findByNome(String nome);
 	List<Pessoa> findByNomeContaining(String nome);
 
 }

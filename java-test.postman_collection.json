@@ -43,6 +43,26 @@
 			"response": []
 		},
 		{
+			"name": "Pessoas - Buscar Por Nome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/pessoas/nome/Silva",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoas",
+						"nome",
+						"Silva"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Pessoas - Adicionar",
 			"request": {
 				"method": "POST",
@@ -129,6 +149,26 @@
 					"port": "8080",
 					"path": [
 						"dependentes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dependentes - Buscar Por Nome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/dependentes/nome/Hygor",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dependentes",
+						"nome",
+						"Hygor"
 					]
 				}
 			},

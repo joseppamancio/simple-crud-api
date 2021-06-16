@@ -42,4 +42,12 @@ public class CadastroDependenteService {
 		}
 		return null;
 	}
+	
+	public List<Dependente> buscarDependentePorNome(String nomeDependente) {
+		List<Dependente> dependentes = dependenteRepository.findByNomeContaining(nomeDependente);	
+		if(!dependentes.isEmpty()) {
+			return dependentes;
+		}
+		return null;
+	}
 }

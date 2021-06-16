@@ -2,7 +2,9 @@ package com.crud.test.api.controller;
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -55,6 +57,18 @@ public class PessoaController {
 	
 	
 	
+	//------- BUSCAR POR NOME -------//
+	@GetMapping("/nome/{nomePessoa}")
+	public ResponseEntity<ListIterator<PessoaModel>> buscarNome(@PathVariable String nomePessoa) {		
+		List<PessoaModel> pessoaModel = toCollectionModel(cadastroPessoaService.buscarPessoaPorNome(nomePessoa));
+		if(pessoaModel != null) {
+			return ResponseEntity.ok(pessoaModel.listIterator());
+		}
+		return ResponseEntity.notFound().build();	//ResponseEntity faz a trataiva de resposta HTTP
+	}
+	
+
+	
 	//------- ADICIONAR -------//
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
@@ -87,9 +101,18 @@ public class PessoaController {
 		return ResponseEntity.notFound().build();
 	}
 	
+	
+	
+	//------ CONVERSÃO ENTIDADE PARA MODELO -----//
 	private PessoaModel toModel(Pessoa pessoa) {
 		PessoaModel pessoaModel = modelMapper.map(pessoa,PessoaModel.class);
 		return pessoaModel;
+	}
+	
+	private List<PessoaModel> toCollectionModel(List<Pessoa> pessoas){
+		return pessoas.stream()
+				.map(pessoa -> toModel(pessoa))
+				.collect(Collectors.toList());		
 	}
 
 }

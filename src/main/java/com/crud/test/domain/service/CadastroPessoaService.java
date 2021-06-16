@@ -42,4 +42,12 @@ public class CadastroPessoaService {
 		}
 		return null;
 	}
+	
+	public List<Pessoa> buscarPessoaPorNome(String nomePessoa) {
+		List<Pessoa> pessoas = pessoaRepository.findByNomeContaining(nomePessoa);	
+		if(!pessoas.isEmpty()) {
+			return pessoas;
+		}
+		return null;
+	}
 }

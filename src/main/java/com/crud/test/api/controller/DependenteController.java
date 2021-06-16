@@ -2,7 +2,9 @@ package com.crud.test.api.controller;
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -60,6 +62,17 @@ public class DependenteController {
 	
 	
 	
+	//------- BUSCAR POR NOME -------//
+	@GetMapping("/nome/{nomeDependente}")
+	public ResponseEntity<ListIterator<DependenteModel>> buscarNome(@PathVariable String nomeDependente) {		
+		List<DependenteModel> dependenteModel = toCollectionModel(cadastroDependenteService.buscarDependentePorNome(nomeDependente));
+		if(dependenteModel != null) {
+			return ResponseEntity.ok(dependenteModel.listIterator());
+		}
+		return ResponseEntity.notFound().build();	//ResponseEntity faz a trataiva de resposta HTTP
+	}
+	
+	
 	//------- ADICIONAR -------//
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
@@ -98,9 +111,17 @@ public class DependenteController {
 		return ResponseEntity.notFound().build();
 	}
 
+	
+	
+	//----- CONVERSÃO ENTIDADE PARA MODELO -----//
 	private DependenteModel toModel(Dependente dependente) {
 		DependenteModel dependenteModel = modelMapper.map(dependente,DependenteModel.class);
 		return dependenteModel;
 	}
 	
+	private List<DependenteModel> toCollectionModel(List<Dependente> dependentes){
+		return dependentes.stream()
+				.map(dependente -> toModel(dependente))
+				.collect(Collectors.toList());		
+	}
 }
