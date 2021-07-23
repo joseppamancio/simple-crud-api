@@ -28,12 +28,12 @@ INSERT INTO public.dependente(pessoa_id, nome, idade, data_nascimento, estado_ci
 	VALUES (2, 'Matheus Oliveira Silva', 30, '1990-06-27 00:00:00', 1);
 
 	
-INSERT INTO public.estado_civil(estado_civil) VALUES ('SOLTEIRO (A)');
+INSERT INTO public.estado_civil(id, estado_civil) VALUES (0, 'SOLTEIRO (A)');
 
-INSERT INTO public.estado_civil(estado_civil) VALUES ('UNIÃO ESTÁVEL');
+INSERT INTO public.estado_civil(id, estado_civil) VALUES (1, 'UNIÃO ESTÁVEL');
 
-INSERT INTO public.estado_civil(estado_civil) VALUES ('CASADO (A)');
+INSERT INTO public.estado_civil(id, estado_civil) VALUES (2, 'CASADO (A)');
 
-INSERT INTO public.estado_civil(estado_civil) VALUES ('DIVORCIADO (A)');
+INSERT INTO public.estado_civil(id, estado_civil) VALUES (3, 'DIVORCIADO (A)');
 
-INSERT INTO public.estado_civil(estado_civil) VALUES ('VIÚVO (A)');
+INSERT INTO public.estado_civil(id, estado_civil) VALUES (4, 'VIÚVO (A)');
