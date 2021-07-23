@@ -35,6 +35,9 @@ public class Dependente {
 	@Column(name="estadoCivil")
 	private EstadoCivil estadoCivil;
 	
+	@Column(name="idade")
+	private Integer idade;
+	
 	@Valid
 	@NotNull
 	@ManyToOne
@@ -73,6 +76,13 @@ public class Dependente {
 		this.estadoCivil = estadoCivil;
 	}
 
+	public Integer getIdade() {
+		return idade;
+	}
+	public void setIdade(Integer idade) {
+		this.idade = idade;
+	}
+	
 	public Pessoa getPessoa() {
 		return pessoa;
 	}

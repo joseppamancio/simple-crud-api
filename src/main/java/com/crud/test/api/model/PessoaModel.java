@@ -8,8 +8,10 @@ public class PessoaModel {
 
 	private Long id;
 	private String nome;
+	private Integer idade;
 	private Date dataNascimento;
 	private EstadoCivil estadoCivil;
+	
 	public Long getId() {
 		return id;
 	}
@@ -35,5 +37,12 @@ public class PessoaModel {
 		this.estadoCivil = estadoCivil;
 	}
 	
+	public Integer getIdade() {
+		return idade;
+	}
+	
+	public void setIdade(Integer idade) {
+		this.idade = idade;
+	}
 	
 }

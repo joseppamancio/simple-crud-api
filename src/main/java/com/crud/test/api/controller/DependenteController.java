@@ -78,7 +78,7 @@ public class DependenteController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public DependenteModel adicionar(@Valid @RequestBody Dependente dependente) {
 		Pessoa pessoa = pessoaRepository.findById(dependente.getPessoa().getId())
-				.orElseThrow();
+				.orElseThrow(null);
 		
 		dependente.setPessoa(pessoa);
 		return toModel(cadastroDependenteService.salvar(dependente));

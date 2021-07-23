@@ -31,6 +31,9 @@ public class Pessoa {
 	@Column(name="estadoCivil")
 	private EstadoCivil estadoCivil;
 	
+	@Column(name="idade")
+	private Integer idade;
+	
 	public Long getId() {
 		return id;
 	}
@@ -55,6 +58,13 @@ public class Pessoa {
 	}
 	public void setEstadoCivil(EstadoCivil estadoCivil) {
 		this.estadoCivil = estadoCivil;
+	}
+	
+	public Integer getIdade() {
+		return idade;
+	}
+	public void setIdade(Integer idade) {
+		this.idade = idade;
 	}
 	
 	@Override
