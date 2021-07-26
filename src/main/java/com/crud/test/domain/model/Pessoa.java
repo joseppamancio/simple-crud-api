@@ -34,6 +34,24 @@ public class Pessoa {
 	@Column(name="idade")
 	private Integer idade;
 	
+	@Column(name="cpf")
+	private String cpf;
+	
+	@Column(name="profissao")
+	private String profissao;
+	
+	@Column(name="endereco")
+	private String endereco;
+	
+	@Column(name="bairro")
+	private String bairro;
+	
+	@Column(name="cidade")
+	private String cidade;
+	
+	@Column(name="estado")
+	private String estado;
+	
 	public Long getId() {
 		return id;
 	}
@@ -65,6 +83,54 @@ public class Pessoa {
 	}
 	public void setIdade(Integer idade) {
 		this.idade = idade;
+	}
+	
+	public String getCpf() {
+		return cpf;
+	}
+	
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
+	public String getProfissao() {
+		return profissao;
+	}
+	
+	public void setProfissao(String profissao) {
+		this.profissao = profissao;
+	}
+	
+	public String getEndereco() {
+		return endereco;
+	}
+	
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+	
+	public String getBairro() {
+		return bairro;
+	}
+	
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+	
+	public String getCidade() {
+		return cidade;
+	}
+	
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+	
+	public String getEstado() {
+		return estado;
+	}
+	
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 	
 	@Override
