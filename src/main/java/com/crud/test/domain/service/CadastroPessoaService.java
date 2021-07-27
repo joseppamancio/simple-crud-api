@@ -15,7 +15,6 @@ public class CadastroPessoaService {
 	@Autowired
 	private PessoaRepository pessoaRepository;
 	
-	
 	public List<Pessoa> listar() {
 		return pessoaRepository.findAll();
 	}
@@ -50,4 +49,5 @@ public class CadastroPessoaService {
 		}
 		return null;
 	}
+	
 }

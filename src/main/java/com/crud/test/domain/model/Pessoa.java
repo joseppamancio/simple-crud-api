@@ -52,6 +52,15 @@ public class Pessoa {
 	@Column(name="estado")
 	private String estado;
 	
+	public Pessoa() {
+		super();
+	}
+
+	public Pessoa(@NotBlank @Size(max = 100) String nome, String cpf) {
+		this.nome = nome;
+		this.cpf = cpf;
+	}
+	
 	public Long getId() {
 		return id;
 	}
