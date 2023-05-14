@@ -64,7 +64,7 @@ public class PessoaController {
 		if(pessoaModel != null) {
 			return ResponseEntity.ok(pessoaModel.listIterator());
 		}
-		return ResponseEntity.notFound().build();	//ResponseEntity faz a trataiva de resposta HTTP
+		return ResponseEntity.notFound().build();	//ResponseEntity faz a tratativa de resposta HTTP
 	}
 	
 

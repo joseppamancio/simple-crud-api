@@ -11,5 +11,6 @@ import com.crud.test.domain.model.Pessoa;
 public interface PessoaRepository extends JpaRepository<Pessoa, Long>{
 	
 	List<Pessoa> findByNomeContaining(String nome);
+	Pessoa findByCpf(String cpf);
 
 }

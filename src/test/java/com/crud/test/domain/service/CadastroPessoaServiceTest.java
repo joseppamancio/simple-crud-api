@@ -35,7 +35,7 @@ class CadastroPessoaServiceTest {
 	  @BeforeEach
 	  public void init() {
 		  
-		  pessoa = new Pessoa("Joyce de Campos Matos", "42313855079");
+		  pessoa = new Pessoa("Maria de Campos Almeida", "42313855079");
 		  pessoa.setIdade(28);
 		  pessoa.setProfissao("Balconista");
 		  pessoa.setEstadoCivil(EstadoCivil.CASADO);
@@ -51,10 +51,9 @@ class CadastroPessoaServiceTest {
 		  
 		  cadastroPessoaService.salvar(pessoa);
 
-		  Pessoa pessoaEncontrada = pessoaRepository.findAll().stream()
-	        .filter(p -> p.getNome().equals("Joyce de Campos Matos")).findFirst().get();
+		  Pessoa pessoaEncontrada = pessoaRepository.findByCpf("42313855079");
 
-		  assertEquals("Joyce de Campos Matos", pessoaEncontrada.getNome());
+		  assertEquals("Maria de Campos Almeida", pessoaEncontrada.getNome());
 		  assertEquals(28, pessoaEncontrada.getIdade());
 		  assertEquals("Balconista", pessoaEncontrada.getProfissao());
 		  assertEquals(EstadoCivil.CASADO, pessoaEncontrada.getEstadoCivil());
@@ -68,8 +67,7 @@ class CadastroPessoaServiceTest {
 	  @AfterEach
 	  public void excluirTest() {
 		  
-		Pessoa pessoaEncontrada = pessoaRepository.findAll().stream()
-			       .filter(p -> p.getNome().equals("Joyce de Campos Matos")).findFirst().get();
+		Pessoa pessoaEncontrada = pessoaRepository.findByCpf("42313855079");
 		  
 		Long pessoaId = pessoaEncontrada.getId();
 		cadastroPessoaService.excluir(pessoaId);
