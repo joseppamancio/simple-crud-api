@@ -1,43 +1,30 @@
 [English](README.md) | [Español](README.es.md)
 
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
-[![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)](https://maven.apache.org/)
-[![Kafka](https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white)](https://kafka.apache.org/)
+[![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-boot)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Flyway](https://img.shields.io/badge/Flyway-fa023c?style=for-the-badge&logo=flyway&logoColor=white)](https://flywaydb.org/)
+[![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)](https://www.postman.com/)
 
-# E-commerce com Kafka
-## 📄 Descrição do Projeto
-Desenvolvido durante o curso da Alura, este projeto simula um sistema de e-commerce utilizando Apache Kafka como plataforma de mensageria. Implementado em Java, faz uso do Maven como gerenciador de dependências.
-
-## 📦 Estrutura
-A arquitetura possuium um estilo de uma aplicação como uma coleção de serviços que são:  
-* Altamente mantíveis e testáveis
-* Fracamente acoplados
-* Independentes na implantação
-* Organizados em torno das capacidades de negócios
-* Capazes de serem desenvolvidos por uma pequena equipe.
+# Simple Crud API
+## 📝 Descrição
+Este projeto é uma API Restful desenvolvida em Java com Spring Boot, Hibernate e Postgres, com o objetivo de realizar operações CRUD em uma tabela de banco de dados.
 
 ## ⚙️ Tecnologias
-- Java
-- Maven
-- Apache Kafka
-- Docker
+- Java 11
+- Spring Boot
+- Hibernate
+- Postgres
+- Flyway
 
-## 🚀 Como executar
+## 📦 Instalação
 1. Clone o repositório
-2. No diretorio "docker-kafka/custom-image" execute os seguinte comandos:
-    - `docker-compose up` para subir o container do Kafka
-    - `./start-kafka.sh` para subir o servidor do Kafka
-3. No diretorio "projetos/ecommerce" execute o comando:
-    - `mvn clean install` para instalar as dependências
-4. O projeto possui os seguintes serviços:
-    - "EmailService" para simular o envio de email.
-    - "NewOrderService" para simular a criação de um novo pedido.
-    - "HttpEcommerceService" para simular a comunicação com um serviço externo.
-    - "LogService" para simular o log de mensagens.
-    - "NewOrderMain" para simular a criação de um novo pedido.
-    - "ReadingReportService" para simular a leitura de relatórios.
-    - "CreateUserService" para simular a criação de um novo usuário.
-    - "BatchSendMessageService" para simular o envio de mensagens em lote.
-5. Execute os serviços desejados e observe o funcionamento do Kafka.
+2. Importe o projeto para sua IDE
+3. Execute o projeto
+4. Acesse a URL `http://localhost:8080/`
 
-
+## 🚀 Uso
+- Ao executar o projeto, as tabelas serão criadas no banco de dados através do Flyway, e também será realizada uma carga de dados para testes.
+- Para testar os Endpoints, importe a Collection JSON para o Postman - 'java-test.postman_collection.json'.
+- O projeto inclui scripts que geram as tabelas em um Banco de Dados Postgres.
+- Uma pré-carga de dados é gerada pelo script 'V007__carga-de-tabelas.sql' para realizar testes de consulta.
